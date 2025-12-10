@@ -121,7 +121,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-            className="text-5xl sm:text-6xl lg:text-8xl font-extrabold text-white mb-6 leading-tight"
+            className="text-5xl sm:text-6xl lg:text-8xl font-extrabold text-white mb-6 leading-tight tracking-tight"
           >
             <motion.span
               initial={{ opacity: 0, x: -50 }}
@@ -155,7 +155,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.3 }}
-          className="text-xl sm:text-2xl lg:text-3xl text-gray-100 mb-8 max-w-4xl mx-auto leading-relaxed font-light"
+          className="text-xl sm:text-2xl lg:text-3xl text-gray-100 mb-10 max-w-4xl mx-auto leading-relaxed font-light"
         >
           Leading the quest to change the world as the{" "}
           <span className="font-semibold text-[#8EC341]">trusted sustainability partner</span>,
@@ -175,19 +175,18 @@ export default function Hero() {
             href="#contact"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="group relative px-10 py-5 bg-gradient-to-r from-[#8EC341] to-[#3C8B3C] text-white rounded-full font-bold text-lg hover:shadow-2xl transition-all duration-300 flex items-center space-x-3 overflow-hidden z-10"
+            className="group relative px-10 py-5 bg-gray-900 text-white rounded-xl font-semibold text-lg hover:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3 overflow-hidden z-10"
           >
             <span className="relative z-10 flex items-center space-x-3">
               <span>Get Started Today</span>
               <FiArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#3C8B3C] to-[#8EC341] opacity-0 group-hover:opacity-100 transition-opacity"></div>
           </motion.a>
           <motion.a
             href="#about"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-5 bg-white/20 text-white rounded-full font-bold text-lg border-2 border-white/40 hover:bg-white/30 hover:border-white/60 transition-all duration-300 shadow-xl z-10"
+            className="px-10 py-5 bg-white/10 backdrop-blur-sm text-white rounded-xl font-semibold text-lg border border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 shadow-xl z-10"
           >
             Learn More
           </motion.a>

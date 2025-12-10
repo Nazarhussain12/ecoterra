@@ -10,6 +10,12 @@
   --primary-green-alt: #3C8B3C;
   --background: #ffffff;
   --foreground: #131B49;
+  
+  /* Enhanced color palette for professional UI */
+  --border: 229 229 229;
+  --input: 229 229 229;
+  --ring: 142 195 65;
+  --radius: 0.75rem;
 }
 
 * {
@@ -25,8 +31,11 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 /* Smooth scrolling with Lenis */

@@ -16,7 +16,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-[#131B49] via-[#2E5580] to-[#175773] text-white">
+    <footer className="bg-gradient-to-br from-[#131B49] via-[#2E5580] to-[#175773] text-white pt-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
@@ -166,7 +166,11 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      
+      {/* 3D Rounded Top Corners Effect */}
+      <div className="relative">
+        <div className="absolute -top-8 left-0 right-0 h-8 bg-gradient-to-br from-[#131B49] via-[#2E5580] to-[#175773] rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.3)]"></div>
+      </div>
     </footer>
   );
 }
-

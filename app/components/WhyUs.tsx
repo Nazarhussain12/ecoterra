@@ -2,58 +2,43 @@
 
 import { motion } from "framer-motion";
 import {
-  FiCheckCircle,
-  FiTrendingUp,
   FiShield,
-  FiZap,
-  FiHeart,
-  FiCode,
+  FiSettings,
+  FiStar,
 } from "react-icons/fi";
 
 export default function WhyUs() {
   const features = [
     {
-      icon: FiHeart,
-      title: "Client-Focused",
-      description:
-        "We understand your unique needs and provide practical, affordable, and reliable solutions tailored to you.",
-      color: "from-[#8EC341] to-[#3C8B3C]",
-    },
-    {
-      icon: FiTrendingUp,
-      title: "R&D Backed",
-      description:
-        "Strong research and development allows us to quickly transform technical ideas into successful commercial projects.",
-      color: "from-[#2E5580] to-[#175773]",
-    },
-    {
-      icon: FiZap,
-      title: "Timely Solutions",
-      description:
-        "We respond to changing customer demands while delivering timely and cost-effective energy solutions.",
-      color: "from-[#131B49] to-[#2E5580]",
-    },
-    {
       icon: FiShield,
-      title: "Reliable Service",
+      title: "You Can Trust",
       description:
-        "Committed to making energy independence a reality for everyone with dependable, long-term solutions.",
-      color: "from-[#175773] to-[#8EC341]",
+        "With over 5 years of experience, our team of energy experts has successfully completed numerous projects across Pakistan, delivering reliable and efficient solar solutions.",
+      iconBg: "bg-orange-500",
+      number: "01",
+    },
+    {
+      icon: FiSettings,
+      title: "Tailored for You",
+      description:
+        "We believe in the power of personalized solutions. Your energy system should reflect your unique needs and requirements, ensuring maximum efficiency and savings.",
+      iconBg: "bg-[#2E5580]",
+      number: "02",
+    },
+    {
+      icon: FiStar,
+      title: "Safety and Quality",
+      description:
+        "Your well-being is at the heart of everything we do. We adhere to the highest safety and quality standards, ensuring reliable and long-lasting energy solutions.",
+      iconBg: "bg-[#8EC341]",
+      number: "03",
     },
   ];
 
   return (
-    <section
-      id="why-us"
-      className="py-24 bg-gradient-to-br from-[#131B49] via-[#2E5580] to-[#175773] relative overflow-hidden"
-    >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-[#8EC341] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#3C8B3C] rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="why-us" className="py-32 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading Area */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,17 +46,18 @@ export default function WhyUs() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
-            Why Choose <span className="text-[#8EC341]">ECO Terra</span>?
-          </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#8EC341] to-[#3C8B3C] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-            We are committed to making energy independence a reality for
-            everyone
+          {/* Sub-heading with letter spacing */}
+          <p className="text-orange-500 text-sm uppercase tracking-[0.3em] mb-4 font-semibold">
+            W h y C h o o s e U s
           </p>
+          {/* Main Heading */}
+          <h2 className="text-5xl sm:text-6xl font-bold text-[#131B49] tracking-tight">
+            Why Choose Us
+          </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Feature Cards - Three Cards Horizontally */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -79,18 +65,34 @@ export default function WhyUs() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, y: -5 }}
-              className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300"
+              className="bg-white rounded-xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-all duration-500 relative"
             >
-              <div
-                className={`w-16 h-16 rounded-full bg-gradient-to-r ${feature.color} flex items-center justify-center mb-6`}
-              >
-                <feature.icon className="w-8 h-8 text-white" />
+              {/* Icon and Title Section */}
+              <div className="flex items-start gap-4 mb-4">
+                {/* Colored Square Icon */}
+                <div
+                  className={`${feature.iconBg} w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 shadow-lg`}
+                >
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+
+                {/* Title */}
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-[#131B49] mb-2">
+                    {feature.title}
+                  </h3>
+                </div>
+
+                {/* Large Number - Positioned to the right */}
+                <div className="absolute top-8 right-8">
+                  <span className="text-6xl font-bold text-gray-200 leading-none">
+                    {feature.number}
+                  </span>
+                </div>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4">
-                {feature.title}
-              </h3>
-              <p className="text-gray-200 leading-relaxed">
+
+              {/* Description */}
+              <p className="text-gray-500 leading-relaxed text-sm mt-6">
                 {feature.description}
               </p>
             </motion.div>
@@ -100,4 +102,3 @@ export default function WhyUs() {
     </section>
   );
 }
-
