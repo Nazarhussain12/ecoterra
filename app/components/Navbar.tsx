@@ -34,32 +34,24 @@ export default function Navbar() {
       className="fixed top-4 left-4 right-4 z-50"
     >
       <div className="max-w-7xl mx-auto">
-        {/* Main Navbar - Pill Shaped with Enhanced Gradient and 3D Glow Effect */}
+        {/* Main Navbar - Professional White to Blue Gradient */}
         <div
-          className={`relative bg-gradient-to-r from-[#2E5580] via-[#175773] via-[#8EC341] to-[#131B49] rounded-full px-6 py-4 transition-all duration-300 ${
+          className={`relative bg-gradient-to-r from-white via-blue-50 to-blue-100 rounded-full px-6 py-4 transition-all duration-300 border border-blue-200/50 ${
             isScrolled
-              ? "shadow-[0_8px_40px_rgba(46,85,128,0.6),0_0_60px_rgba(142,195,65,0.3),inset_0_1px_0_rgba(255,255,255,0.2)]"
-              : "shadow-[0_4px_30px_rgba(46,85,128,0.5),0_0_40px_rgba(142,195,65,0.2),inset_0_1px_0_rgba(255,255,255,0.15)]"
+              ? "shadow-[0_8px_30px_rgba(46,85,128,0.15)]"
+              : "shadow-[0_4px_20px_rgba(46,85,128,0.1)]"
           }`}
-          style={{
-            boxShadow: isScrolled
-              ? "0 8px 40px rgba(46, 85, 128, 0.6), 0 0 60px rgba(142, 195, 65, 0.3), 0 0 80px rgba(23, 87, 115, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2)"
-              : "0 4px 30px rgba(46, 85, 128, 0.5), 0 0 40px rgba(142, 195, 65, 0.2), 0 0 60px rgba(23, 87, 115, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15)",
-          }}
         >
-          {/* Glow Effect Overlay */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-50"></div>
-          
           <div className="relative flex items-center justify-between">
-            {/* Logo - Circular */}
+            {/* Logo - No Cover */}
             <Link href="#home" className="flex items-center z-10">
-              <div className="relative w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm border-2 border-white/30 flex items-center justify-center overflow-hidden shadow-lg">
+              <div className="relative w-10 h-10">
                 <Image
                   src="/images/logo.jpg"
                   alt="ECO Terra Logo"
                   fill
                   sizes="40px"
-                  className="object-contain p-1.5"
+                  className="object-contain"
                   priority
                 />
               </div>
@@ -71,7 +63,7 @@ export default function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-white font-medium hover:text-[#8EC341] transition-colors duration-300 text-sm relative group"
+                  className="text-[#2E5580] font-medium hover:text-[#8EC341] transition-colors duration-300 text-sm relative group"
                 >
                   {link.name}
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#8EC341] group-hover:w-full transition-all duration-300"></span>
@@ -79,21 +71,21 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Email CTA - Rounded Rectangle */}
+            {/* Email Icon - Just Icon */}
             <div className="hidden md:block z-10">
               <a
                 href="mailto:khanmustafa493@gmail.com"
-                className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 flex items-center space-x-2 border border-white/30 shadow-lg hover:shadow-xl"
+                className="bg-[#2E5580] hover:bg-[#175773] text-white w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg"
+                aria-label="Email us"
               >
-                <FiMail className="w-4 h-4" />
-                <span>khanmustafa493@gmail.com</span>
+                <FiMail className="w-5 h-5" />
               </a>
             </div>
 
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-white p-2 z-10"
+              className="md:hidden text-[#2E5580] p-2 z-10"
               aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
@@ -112,7 +104,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="md:hidden mt-4 bg-gradient-to-r from-[#2E5580] via-[#175773] via-[#8EC341] to-[#131B49] rounded-3xl shadow-[0_8px_40px_rgba(46,85,128,0.6),0_0_60px_rgba(142,195,65,0.3)] overflow-hidden backdrop-blur-xl border border-white/10"
+              className="md:hidden mt-4 bg-gradient-to-r from-white via-blue-50 to-blue-100 rounded-3xl shadow-[0_8px_30px_rgba(46,85,128,0.15)] overflow-hidden border border-blue-200/50"
             >
               <div className="px-6 py-6 space-y-4">
                 {navLinks.map((link) => (
@@ -120,17 +112,17 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block text-white font-medium hover:text-[#8EC341] transition-colors py-2"
+                    className="block text-[#2E5580] font-medium hover:text-[#8EC341] transition-colors py-2"
                   >
                     {link.name}
                   </Link>
                 ))}
                 <a
                   href="mailto:khanmustafa493@gmail.com"
-                  className="flex items-center justify-center space-x-2 bg-white/20 text-white px-6 py-3 rounded-full mt-4 hover:bg-white/30 transition-colors font-medium border border-white/30"
+                  className="flex items-center justify-center bg-[#2E5580] text-white w-12 h-12 rounded-full mt-4 hover:bg-[#175773] transition-colors shadow-md"
+                  aria-label="Email us"
                 >
-                  <FiMail className="w-4 h-4" />
-                  <span className="text-sm">khanmustafa493@gmail.com</span>
+                  <FiMail className="w-5 h-5" />
                 </a>
               </div>
             </motion.div>

@@ -35,9 +35,11 @@ export default function Hero() {
           className="object-cover"
           quality={90}
         />
-        {/* Dark Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#131B49]/90 via-[#131B49]/80 to-[#2E5580]/90"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#131B49]/60 via-transparent to-[#175773]/60"></div>
+        {/* Blur Overlay */}
+        <div className="absolute inset-0 backdrop-blur-sm"></div>
+        {/* Light Overlay with Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#131B49]/40 via-[#131B49]/30 to-[#2E5580]/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#131B49]/30 via-transparent to-[#175773]/30"></div>
       </motion.div>
 
       {/* Animated Background Elements */}
@@ -84,27 +86,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Floating Particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute w-2 h-2 bg-[#8EC341]/30 rounded-full"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -30, 0],
-            opacity: [0.3, 0.7, 0.3],
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 2,
-            repeat: Infinity,
-            delay: Math.random() * 2,
-          }}
-        />
-      ))}
 
       {/* Content */}
       <motion.div
